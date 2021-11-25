@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* initi */
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    ul,li {list-style: none;}
+    html, body {background-color: #fff; color: #333;}
+    a {text-decoration: none; color: inherit;}
+
+    /* setting */
+    .po-rel {position: relative;}
+    .po-abs {position: absolute;}
+    .po-fix {position: fixed;}
+    .po-sti {position: sticky;}
+
+    .fl-lef {float: left;}
+    .fl-rig {float: right;}
+
+    .flex {display: flex;}
+    .hidden {display: none;}
+
+    /* layout */
+
+    /* modal */
+    #modal-box {
+      width: 100%; height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    #modal {
+      width: 300px; height: 300px;
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 40px;
+    }
+    #modal h3{
+      margin-bottom: 20px;
+    }
+    #modal button {
+      width: 80px; height: 30px;
+      background-color: #aaa;
+      border: none;
+      color: #000;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 70px;
+      cursor: pointer;
+    }
+
+
+    /* header */
+    header {
+      width: 100%; height: 100px;
+      background-color: khaki;
+      padding: 30px 350px;
+      justify-content: space-between;
+    }
+    header #logo {
+      width: 200px; height: 40px;
+      border: 1px solid red;
+    }
+    header #menu {
+      width: 800px; height: 40px;
+      background-color: lawngreen;
+      transition: 1s;
+    }
+
+    header #menu>li {
+      width: 200px; height: 40px;
+      text-align: center;
+      line-height: 40px;
+      transition: 1s;
+    }
+
+    /* container */
+    #container {
+      width: 1200px; height: 500px;
+      margin: 0 auto;
+    }
+    /* slide */
+    #slide {
+      width: 1200px; height: 300px;
+      overflow: hidden;
+    }
+    #slide section {
+      width: 1200px; height: 300px;
+      float: left;
+    }
+    #slide section:nth-child(1) {
+      background-color: lightcoral;
+    }
+    #slide section:nth-child(2) {
+      background-color: lightskyblue;
+    }
+    #slide section:nth-child(3) {
+      background-color: lightseagreen;
+    }
+    /* contents */
+    #contents {
+      width: 100%; height: 200px;
+    }
+    #contents article:nth-child(1) {
+      width: 40%; height: 200px;
+      background-color: lightgray;
+    }
+    #contents article:nth-child(2) {
+      width: 30%; height: 200px;
+      background-color: lightpink;
+    }
+    #contents article:nth-child(3) {
+      width: 30%; height: 200px;
+      background-color: lightsalmon;
+    }
+
+    #gal li:nth-child(1) {
+      width: 200px; height: 200px;
+      background-color: lightsalmon;
+    }
+    #gal li:nth-child(2) {
+      width: 200px; height: 200px;
+      background-color: lightseagreen;
+    }
+    #gal li:nth-child(3) {
+      width: 200px; height: 200px;
+      background-color: lightslategray;
+    }
+    
+    /* footer */
+    footer {
+      width: 100%; height: 100px;
+      background-color: khaki;
+      padding: 30px 350px;
+      justify-content: space-between;
+    }
+    footer #logo_f {
+      width: 150px; height: 100%;
+      background-color: lightslategray;
+    }
+    footer #menu_f{
+      width: 1000px; height: 50%;
+      background-color: lime;
+    }
+    footer #menu_f ul {
+      justify-content: space-around;
+    }
+    footer #copy{
+      width: 1000px; height: 50%;
+      background-color: magenta;
+    }
+    footer #copy p {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+    <div id="modal-box" class="po-abs flex hidden">
+      <div id="modal" class="po-abs">
+        <h3>공지사항</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, dolorum?</p>
+        <button #id="btn">닫기</button>
+      </div>
+    </div>
+    <header class="flex">
+      <h1 id="logo">logo</h1>
+      <ul id="menu">
+        <li class="fl-lef">
+          개인
+          <ul class="hidden sub">
+            <li>조회</li>
+            <li>이체</li>
+            <li>공과금</li>
+            <li>예금/신탁</li>
+          </ul>
+        </li>
+        <li class="fl-lef">
+          기업
+          <ul class="hidden sub">
+            <li>조회</li>
+            <li>이체</li>
+            <li>전자결제</li>
+            <li>수표/어음</li>
+          </ul>
+        </li>
+        <li class="fl-lef">
+          금융상품
+          <ul class="hidden sub">
+            <li>저축상품</li>
+            <li>대출상품</li>
+            <li>투자상품</li>
+          </ul>
+        </li>
+        <li class="fl-lef">
+          카드
+          <ul class="hidden sub">
+            <li>카드정보</li>
+            <li>카드신청</li>
+            <li>이용내역조회</li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <div id="container">
+      <div id="slide">
+        <section>img1</section>
+        <section>img2</section>
+        <section>img3</section>
+      </div>
+      <div id="contents" class="flex">
+        <article>
+          <h2><a href="#">공지사항</a></h2>
+          <ul #id="notice">
+            <li><a href="#">notice1</a><span>2021.11.25</span></li>
+            <li><a href="#">notice2</a><span>2021.11.25</span></li>
+            <li><a href="#">notice3</a><span>2021.11.25</span></li>
+            <li><a href="#">notice4</a><span>2021.11.25</span></li>
+          </ul>
+          <h2><a href="#">갤러리</a></h2>
+          <ul #id="gal">
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+          </ul>
+        </article>
+
+        <article>
+          <h2>배너</h2>
+          <a href="#">
+            <div></div>
+          </a>
+        </article>
+        <article>
+          <h2>바로가기</h2>
+          <ul>
+            <li><a href="#">바로가기1</a></li>
+            <li><a href="#">바로가기2</a></li>
+            <li><a href="#">바로가기3</a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <footer>
+      <h2 id="logo_f" class="fl-lef">
+        logo
+      </h2>
+      <div id="menu_f"  class="fl-rig">
+        <ul class="flex">
+          <li>menu1</li>
+          <li>menu2</li>
+          <li>menu3</li>
+          <li>menu4</li>
+        </ul>
+      </div>
+      <div id="copy" class="fl-rig">
+        <p>copyright</p>
+      </div>
+    </footer>
+
+    <script>
+
+    //메뉴 토글 
+      const menu = document.querySelector('#menu');
+      console.log(menu);
+      menu.addEventListener('mouseover', function(e){
+        console.dir(e.target);//배열
+        e.target.children[0].classList.toggle('hidden');
+      });
+      //플렉스 때문에 아래로 토글되는 게 아니라 위아래로 토글 되어서 플롯으로 바꿈
+      //부드럽게 토글되는 법...??
+      const ulContainer = document.querySelector('#menu');
+      const subMenu = document.getElementsByClassName('sub');
+
+      console.log(menu.children.length);
+      console.log(menu.children[0]);
+      console.log(subMenu);
+
+      ulContainer.addEventListener('mouseleave', function() {
+      for(let i = 0; i < subMenu.length; i++) {
+      subMenu[i].classList.add('hidden');
+      }
+    }); //for()문은 반복문에 주로 쓰이는 걸로 아는데
+      //이 경우는 어떤 원리로 적용되는 걸까??
+      // 마우스 커서가 떨어지면 (~~??) 히든 클래스를 추가해줘
+
+      // 슬라이드
+      const slide = document.querySelector('#slide')
+      const slideItems = document.querySelectorAll('#slide section'); //배열로 받아옴
+      console.dir(slideItems[0]);
+
+      let index = 0;
+      const timer = setInterval(function(){
+      if(index < slideItems.length-1){
+      //length는 인덱스보다 값이 하나 더 크다★
+      console.log(index);
+      slideItems[index].style.marinTop = '-350px';
+      index += 1; //index = index+1 과 같은 말 
+      } else {
+        index = 0;
+        slideItems[index].style.marinTop='0px';
+        for(let i =0; i < slideItems.length; i++){
+          slideItems[i].style.marinTop= '0px';
+        }
+        console.log('done');
+      }
+      }, 1000);
+      // 콘솔에는 찍히는데 html에는 안 되는 이유가...??
+      // 기존에 했던 예제로 보고 있는데 마진 탑은 어떤 연유에서 들어갔는지 아직도 이해를 못하고 있음 
+      // let() 과 for()의 원리가 아직도 헷갈림
+      // 봐도 이해가 어렵고 설명하기는 더 어렵다...
+
+      // 모달
+      const modal = document.querySelector('#modal-box');
+      console.log(modal);
+      console.dir(modal); //배열
+
+      const notice = document.querySelectorAll('#notice');
+      console.log(notice); 
+      //노드리스트 0으로 뜸
+      // 어째서...??
+
+      notice.addEventListener('click', function(e){
+        console.log(e.target);
+      // modal.style.display= "flex"; 
+    });
+
+    //닫기 버튼을 누르면 다시 사라진다
+    const off = document.getElementsByIdName('btn');
+    console.log(off);
+    off.addEventListener('click', function(){
+      modal.style.display= 'none';
+    });
+    
+    //정리
+
+    // 찾아가면서 여기까지 2시간 4분
+    // 완성은 못했지만 시간이 늦었고 막히기도 해서 여기까지
+
+    // 기본적인 구조 마크업은 30분~40분 안에 가능
+    // 단 탭메뉴 제외하고
+
+    //토글을 부드럽게 하고 싶어!
+
+    //분명 모달창 할 수 있었는데 막혀서 답답함
+    //식별자 문제같긴 함
+
+    //탭메뉴 감이 안 와서 영상도 찾아봤는데
+    //스타일이 달라서 헷갈리기만 함
+    //선생님과 했던 예제 뜯어보기로
+
+    //슬라이드... 왜 안 되지?
+    //구조나 형태는 비슷하고 콘솔에서는 움직이는 게 보이는데
+    //화면에는 안 보임 
+    //함수의 원리 파악 필요
+
+    </script>
+</body>
+</html>
