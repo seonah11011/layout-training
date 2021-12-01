@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+  <!-- <script src="./random2link.js"></script> -->
+  
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    html, body {
+      background-color: aliceblue;
+      font-family: 'Noto Serif KR', serif;
+      font-size: 1.2em;
+      padding: 5vw 5vh;
+    }
+
+  </style>
+</head>
+<body>
+  <script>
+    const text = new Array();
+    text[0]="너는 흐르는 시내 잠시 가로막혀도 <br> 휘돌아 결국 흐를 길을 찾으리 무엇이 너를 막겠니 <br> 터져 오른 샘물은 기어이 흘러 바다를 향해 갈 텐데 <br> <br> 너는 멈추지 않아 지줄대며 낮게 흐르리 <br> 잠시 약해지면 오목한데 고였다가도 <br> 다시 넘치듯 가리 옳은 순간은 온다 <br> 두려워 말고 그저 맡기렴";
+    text[1]="지름길과 복잡한 대로를 피해서 <br> 누군가가 밟아서 난 굽고 좁은 길 <br> 나도 뒤에 올 외로운 그 누구 위해서 <br> 한 발 한 발 더 보태어 다지듯 걸었소 <br> <br> 그대여 두려워마시오 <br> 길 위에서는 누구나 혼자요 <br> 어디로 가든 그 얼마나 느리게 걷든 <br> 눈앞의 소로를 따라 겸허히 그렇게";
+    text[2]="그렇게 죽고 싶을 만큼 아팠던 것은 <br> 그만큼 살고 싶다는 증거<br>엉뚱한 곳에서 이유를 찾아 헤매며 <br> 소진했던 옛날이여 <br> <br> 내일은 분명 오늘과 똑같을 테지만 <br>하나만 약속해 줄래 내게 <br> 그렇게 죽고 싶을 만큼 아플 때마다 <br> 싸워보겠다고 <br> 늘 이길 수는 없다 해도";
+    text[3]="우리는 존재하네 짙고 검은 공허 속에서 <br> 하나의 창백한 푸른 점으로 <br> 서로 일으키고 끌어안고 다시 무너뜨리며 <br> 하나의 창백한 푸른 점으로 <br> <br> 나의 창백한 푸른 점으로 <br> 빛을 내"
+    text[4]="너는 아직 어린 별 <br> 네 안에 간절하면 다시 꿈을 꾸게 되리 <br> 검은 어둠 밝히며 네 안에 별을 삼켜 <br> 누군가에게는 푸른 섬광이 되어 <br> 되어, 되어"
+
+    let i = Math.floor(5*Math.random())
+    document.write(text[i]);
+
+    // 중앙에 일정 너비에 맞게 나오기 위해선 컨테이너 박스가 필요할 것 같은데
+    // 그러면 선택자로 다시 불러주는 방향으로? 이거 은근 헷갈려.
+
+    // 따로 링크페이지로 연결해도 분량이 꽤 될 텐데 다른 방법은 없나?
+  </script>
+</body>
+</html>
